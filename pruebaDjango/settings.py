@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'apps.xbox',
     'apps.categoria',
     'apps.principal',
+    'apps.personas',
+    'apps.producto',
 ]
 
 MIDDLEWARE = [

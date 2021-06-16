@@ -1,0 +1,48 @@
+{% extends 'base/base.html' %}
+
+{% block contenido %}
+<section class="row">
+    <article class="col-sm-12">
+        <h2 class="text-center">Productos</h2>
+    </article>
+    <article class="col-sm-12 d-flex flex-row-reverse">
+		<a href="{%url 'nuevoProducto'%}" class="btn btn-outline-info"
+			>Nuevo Producto</a>
+	</article>
+
+    <!-- tabla de productos -->
+    <article class="col-sm-12 table-responseive">
+        <table class="table">
+            <thead>
+                <th>Nombre producto</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Fecha ingreso</th>
+                <th>Categoria</th>
+                <th>Estado</th>
+                <th>Stock</th>
+                <th class="d-flex justify-content-center">Acciones</th>
+            </thead>
+            <tbody>
+                {% for producto in productos %}
+                    <tr>
+                        <td>{{ producto }}</td>
+                        <td>{{ producto.descripcion_producto }}</td>
+                        <td>{{ producto.precio_producto }}</td>
+                        <td>{{ producto.fecha_ingreso }}</td>
+                        <td>{{ producto.categoria_producto }}</td>
+                        <td>{{ producto.estado_producto }}</td>
+                        <td>{{ producto.stock_producto }}</td>
+                        <td class="d-flex justify-content-center">
+                            
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </article>
+</section>
+
+
+{% endblock contenido %}
+
