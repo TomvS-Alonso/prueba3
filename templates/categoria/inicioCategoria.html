@@ -1,0 +1,46 @@
+{% extends 'base/base.html' %}
+
+{% block contenido %}
+<section class="row">
+	<article class="col-sm-12">
+		<h2 class="text-center">Categorías</h2>
+	</article>
+	<article class="col-sm-12 my-2"></article>
+	<article class="col-sm-12 d-flex flex-row-reverse">
+		<a href="{% url 'nuevaCategoria' %}" class="btn btn-outline-info"
+			>Nueva Categría</a
+		>
+	</article>
+	<article class="col-sm-12 my-2"></article>
+	<article class="col-sm-12 table-responseive">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Nombre categoría</th>
+					<th>Descripcion categoria</th>
+					<th class="d-flex justify-content-center">Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				{%for categoria in categorias%}
+				<tr>
+					<td>{{categoria}}</td>
+					<td>{{categoria.descripcion_categoria}}</td>
+					<td class="d-flex justify-content-center">
+						<div class="btn-group" role="group" aria-label="acciones">
+							<a
+								type="button"
+								href=""
+								class="btn btn-warning"
+							>
+								<i class="bi bi-pencil-square"></i>
+							</a>
+						</div>
+					</td>
+				</tr>
+				{%endfor%}
+			</tbody>
+		</table>
+	</article>
+</section>
+{% endblock contenido %}
