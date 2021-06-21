@@ -13,3 +13,6 @@ class Producto(models.Model):
     
     estado_producto = models.CharField('Estado del Producto', max_length= 50, blank= False, null= False)
     stock_producto = models.SmallIntegerField('Stock del producto', blank=False, null= False)
+
+    def __str__(self):
+        return self.nombre_producto

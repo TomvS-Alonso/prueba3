@@ -2,16 +2,22 @@
 
 {% include 'base/css.html' %}
 
+{% block titulo %} 
+    Productos
+{%endblock titulo %}
+
 {% block contenido %}
-<section class="row">
+<section class="row" id="contPagina">
     <article class="col-sm-12">
-        <h2 class="text-center">Productos</h2>
+        <article class="col-sm-12 my-2"></article>
+        <h2 class="text-center">Mantenedor De Productos</h2>
     </article>
+    <article class="col-sm-12 my-2"></article>
     <article class="col-sm-12 d-flex flex-row-reverse" id="Agregar">
 		<a href="{% url 'nuevoProducto' %}" class="btn btn-info"
-			>Nuevo Producto</a>
+			>Agregar Producto</a>
 	</article>
-
+    <article class="col-sm-12 my-2"></article>
     <!-- tabla de productos -->
     <article class="col-sm-12 table-responseive">
         <table class="table">
@@ -36,7 +42,15 @@
                         <td>{{ producto.estado_producto }}</td>
                         <td>{{ producto.stock_producto }}</td>
                         <td class="d-flex justify-content-center">
-                            
+                            <div class="btn-group" role="group" aria-label="acciones">
+                                <a
+                                    type="button"
+                                    href="{% url 'modificarProducto' idProducto=producto.id %}"
+                                    class="btn btn-warning"
+                                >
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+                            </div>
                         </td>
                     </tr>
                 {% endfor %}

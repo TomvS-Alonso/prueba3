@@ -26,3 +26,26 @@ def agregarProducto(request):
     }        
     return render(request, 'producto/nuevoProducto.html', context= contexto)
 
+def editarProducto(request, idProducto):
+    producto = None
+    try:
+        producto = Producto.objects.get(pk= idProducto)
+    except ObjectDoesNotExist as e:
+        pass
+    if producto == None:
+        return redirect('inicioProductos')
+    formulario = None
+    if request.method == 'GET':
+        formulario = FormularioProducto(instance = producto)
+    if request.method == 'POST':
+        formulario = FormularioProducto(data = request.POST, instance = producto)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect('inicioProductos')
+        else:
+            formulario = FormularioProducto(instance = producto)
+    contexto = {
+        'ruta':'producto',
+        'formulario': formulario
+            }
+    return render(request,'producto/editarProducto.html',context=contexto)
