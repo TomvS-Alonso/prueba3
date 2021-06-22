@@ -50,6 +50,14 @@
                                 >
                                     <i class="bi bi-pencil-square"></i>
                                 </a>
+                                <a
+								type="button"
+								href="{% url 'eliminar' idProducto=producto.id %}"
+								onclick="return window.confirm('Desea eliminar el producto {{ producto.nombre_producto }}')"
+								class="btn btn-warning"
+							>
+								<i class="bi bi-trash"></i>
+							</a>
                             </div>
                         </td>
                     </tr>

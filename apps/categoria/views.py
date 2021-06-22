@@ -49,3 +49,11 @@ def editarCategoria(request, idCategoria):
         'formulario': formulario
     }
     return render(request, 'categoria/editarCategoria.html', context= contexto)
+
+def eliminarCategoria(request, idCategoria):
+    try:
+        categoriaEncontrada = Categoria.objects.get(pk= idCategoria)
+        categoriaEncontrada.delete()
+    except ObjectDoesNotExist:
+        pass
+    return redirect('inicioCategoria')

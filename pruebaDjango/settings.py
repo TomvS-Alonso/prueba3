@@ -39,8 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # apps propias
-    'apps.ps4',
-    'apps.xbox',
     'apps.categoria',
     'apps.principal',
     'apps.personas',

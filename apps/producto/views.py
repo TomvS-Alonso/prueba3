@@ -49,3 +49,11 @@ def editarProducto(request, idProducto):
         'formulario': formulario
             }
     return render(request,'producto/editarProducto.html',context=contexto)
+
+def eliminarProducto(request, idProducto):
+    try:
+        productoEncontrado = Producto.objects.get(pk= idProducto)
+        productoEncontrado.delete()
+    except ObjectDoesNotExist:
+        pass
+    return redirect('inicioProductos') 
