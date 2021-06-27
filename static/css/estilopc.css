@@ -208,10 +208,6 @@ body {
   cursor: pointer;
 }
 
-footer {
-  display: hidden;
-}
-
 .producto .popup-card .info h2 {
   font-size: 40px;
   line-height: 20px;
