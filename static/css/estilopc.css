@@ -3,7 +3,6 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -199,13 +198,18 @@ body {
 }
 
 .producto .popup-card .close-btn {
+  display: list-item;
   color: #555;
-  z-index: 3;
+  z-index: 9;
   position: absolute;
   right: 0;
   font-size: 20px;
   margin: 20px;
   cursor: pointer;
+}
+
+footer {
+  display: hidden;
 }
 
 .producto .popup-card .info h2 {
@@ -316,16 +320,15 @@ body {
   }
 
   .producto .popup-card .close-btn {
-    z-index: 4;
+    z-index: 3;
   }
 }
- 
- .api {
-    visibility: hidden;
-    z-index: 2;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
- }
+
+@keyframes icon {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}

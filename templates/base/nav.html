@@ -20,9 +20,9 @@
               Consolas
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#/PlayStation">PlayStation</a>
-              <a class="dropdown-item" href="#/Xbox">Xbox</a>
-              <a class="dropdown-item" href="#/Nintendo">Nintendo</a>
+              <a class="dropdown-item" href="{% url 'playstation' %}">PlayStation</a>
+              <a class="dropdown-item" href="{% url 'Xbox' %}">Xbox</a>
+              <a class="dropdown-item" href="{% url 'nintendo' %}">Nintendo</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Ofertas</a>
             </div>
@@ -34,8 +34,8 @@
               PC
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#/Componentes">Componentes</a>
-              <a class="dropdown-item" href="#/Pc">PC armados</a>
+              <a class="dropdown-item" href="{% url 'componentes' %}">Componentes</a>
+              <a class="dropdown-item" href="{% url 'pc' %}">PC armados</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Ofertas</a>
             </div>
@@ -80,7 +80,7 @@
                 <button type="submit" class="btn btn-primary">Ingresar</button>
               </form>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#/Registro">¿No tienes una cuenta?</a>
+              <a class="dropdown-item" href="{% url 'Registro' %}">¿No tienes una cuenta?</a>
               <a class="dropdown-item" href="#">¿Olvidaste tu contraseña?</a>
              </div>
           </div>

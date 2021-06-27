@@ -1,4 +1,12 @@
-{% extends 'base/base.html' %} {% block contenido %}
+{% extends 'base/base.html' %} {% block css %} {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}" />
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/lightslider.css' %}"
+/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+{% endblock css %} {% block contenido %}
 <section class="container-fluid">
   <!---Seccion carrusel ofertas-->
   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -73,7 +81,7 @@
           <div class="detail-box">
             <!--type-------->
             <div class="type">
-              <a>Fnko pop</a>
+              <a>Funko pop</a>
               <span>Recien llegado</span>
             </div>
             <!--precio-------->

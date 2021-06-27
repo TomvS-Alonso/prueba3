@@ -1,4 +1,11 @@
-{% extends 'base/base.html' %} {% block contenido %}
+{% extends 'base/base.html' %} {% block css %} {% load static %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/estilosplay.css' %}"
+/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+{% endblock css %} {% block contenido %}
 <main class="container">
   <!--Sección carousel-->
   <section class="carousel-ofertas">
@@ -18,14 +25,14 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="./assets/img/ps2.webp" class="d-block w-100" alt="..." />
+          <img src="./static/img/ps2.webp" class="d-block w-100" alt="..." />
         </div>
         <div class="carousel-item">
-          <img src="./assets/img/ps1.jpg" class="d-block w-100" alt="..." />
+          <img src="./static/img/ps1.jpg" class="d-block w-100" alt="..." />
         </div>
         <div class="carousel-item">
           <img
-            src="./assets/img/logo-play.jpg"
+            src="./static/img/logo-play.jpg"
             class="d-block w-100"
             alt="..."
           />
@@ -55,7 +62,7 @@
   <h3 style="color: wheat">Lo más vendido</h3>
   <div class="productos-play" style="display: flex">
     <div class="card mb-2" style="width: 20rem">
-      <img src="./assets/img/play4.jpg" class="card-img-top" alt="..." />
+      <img src="./static/img/play4.jpg" class="card-img-top" alt="..." />
       <div class="card-body">
         <h6 class="card-title">Paquete Completo PlayStation 4</h6>
         <h6 class="card-text">$ 449.990</h6>
@@ -63,7 +70,7 @@
       </div>
     </div>
     <div class="card mb-2" style="width: 20rem">
-      <img src="./assets/img/play2 (1).jpg" class="card-img-top" alt="..." />
+      <img src="./static/img/play2 (1).jpg" class="card-img-top" alt="..." />
       <div class="card-body">
         <h6 class="card-title">Playstation Classic con 20 Juegos</h6>
         <h6 class="card-text">$ 149.990</h6>
@@ -71,7 +78,7 @@
       </div>
     </div>
     <div class="card mb-2" style="width: 20rem">
-      <img src="./assets/img/play3 (1).jpg" class="card-img-top" alt="..." />
+      <img src="./static/img/play3 (1).jpg" class="card-img-top" alt="..." />
       <div class="card-body">
         <h6 class="card-title">Playstation 5 Paquete Inicial</h6>
         <h6 class="card-text">$790.990</h6>
@@ -82,7 +89,7 @@
 
   <div class="productos-play" style="display: flex">
     <div class="card mb-2" style="width: 20rem">
-      <img src="./assets/img/playgame1.jpg" class="card-img-top" alt="..." />
+      <img src="./static/img/playgame1.jpg" class="card-img-top" alt="..." />
       <div class="card-body">
         <h6 class="card-title">Battlefield V</h6>
         <h6 class="card-text">$ 49.990</h6>
@@ -90,7 +97,7 @@
       </div>
     </div>
     <div class="card mb-2" style="width: 20rem">
-      <img src="./assets/img/playgame2.jpg" class="card-img-top" alt="..." />
+      <img src="./static/img/playgame2.jpg" class="card-img-top" alt="..." />
       <div class="card-body">
         <h6 class="card-title">God Of War 4</h6>
         <h6 class="card-text">$ 49.990</h6>
@@ -98,7 +105,7 @@
       </div>
     </div>
     <div class="card mb-2" style="width: 20rem">
-      <img src="./assets/img/playgame3.jpg" class="card-img-top" alt="..." />
+      <img src="./static/img/playgame3.jpg" class="card-img-top" alt="..." />
       <div class="card-body">
         <h6 class="card-title">Call Of Duty Moderm Warfare</h6>
         <h6 class="card-text">$ 49.990</h6>
@@ -109,7 +116,7 @@
 
   <div class="productos-play" style="display: flex">
     <div class="card mb-2" style="width: 20rem">
-      <img src="./assets/img/joystick2.jpg" class="card-img-top" alt="..." />
+      <img src="./static/img/joystick2.jpg" class="card-img-top" alt="..." />
       <div class="card-body">
         <h6 class="card-title">PS4 controller Blue</h6>
         <h6 class="card-text">$ 49.990</h6>
@@ -117,7 +124,7 @@
       </div>
     </div>
     <div class="card mb-2" style="width: 20rem">
-      <img src="./assets/img/joystick1.jpg" class="card-img-top" alt="..." />
+      <img src="./static/img/joystick1.jpg" class="card-img-top" alt="..." />
       <div class="card-body">
         <h6 class="card-title">PS4 controller Red</h6>
         <h6 class="card-text">$ 49.990</h6>
@@ -125,7 +132,7 @@
       </div>
     </div>
     <div class="card mb-2" style="width: 20rem">
-      <img src="./assets/img/joystick3.jpg" class="card-img-top" alt="..." />
+      <img src="./static/img/joystick3.jpg" class="card-img-top" alt="..." />
       <div class="card-body">
         <h6 class="card-title">PS4 controller Gold</h6>
         <h6 class="card-text">$ 49.990</h6>

@@ -1,4 +1,10 @@
-{% extends 'base/base.html' %} {% block contenido %}
+{% extends 'base/base.html' %} {% block css %} {% load static %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/estilonintendo.css' %}"
+/>
+{% endblock css %} {% block contenido %}
 <main class="container">
   <!--Sección carousel-->
   <section class="carousel-ofertas">
@@ -19,21 +25,21 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img
-            src="./assets/img/carrusel1.jpg"
+            src="./static/img/carrusel1.jpg"
             class="d-block w-100"
             alt="..."
           />
         </div>
         <div class="carousel-item">
           <img
-            src="./assets/img/carrusel2.jpg"
+            src="./static/img/carrusel2.jpg"
             class="d-block w-100"
             alt="..."
           />
         </div>
         <div class="carousel-item">
           <img
-            src="./assets/img/carrusel3.jpg"
+            src="./static/img/carrusel3.jpg"
             class="d-block w-100"
             alt="..."
           />
@@ -64,7 +70,7 @@
 
   <div class="productos-nintendo" style="display: flex">
     <div class="card mb-2" style="width: 20rem">
-      <img src="./assets/img/nin1 (1).jpg" class="card-img-top" alt="..." />
+      <img src="./static/img/nin1 (1).jpg" class="card-img-top" alt="..." />
       <div class="card-body">
         <h6 class="card-title">Animal Crossing Switch Edition</h6>
         <h6 class="card-text">$ 399.990</h6>
@@ -72,7 +78,7 @@
       </div>
     </div>
     <div class="card mb-2" style="width: 20rem">
-      <img src="./assets/img/nin2 (1).jpg" class="card-img-top" alt="..." />
+      <img src="./static/img/nin2 (1).jpg" class="card-img-top" alt="..." />
       <div class="card-body">
         <h6 class="card-title">Fortnite Nintendo Switch Edition</h6>
         <h6 class="card-text">$ 399.990</h6>
@@ -80,7 +86,7 @@
       </div>
     </div>
     <div class="card mb-2" style="width: 20rem">
-      <img src="./assets/img/nin3.jpg" class="card-img-top" alt="..." />
+      <img src="./static/img/nin3.jpg" class="card-img-top" alt="..." />
       <div class="card-body">
         <h6 class="card-title">Pokemon Let's Go! Pikachu Switch Edition</h6>
         <h6 class="card-text">$ 399.990</h6>
@@ -91,7 +97,7 @@
 
   <div class="productos-nintendo" style="display: flex">
     <div class="card mb-2" style="width: 20rem">
-      <img src="./assets/img/switch1.jpg" class="card-img-top" alt="..." />
+      <img src="./static/img/switch1.jpg" class="card-img-top" alt="..." />
       <div class="card-body">
         <h6 class="card-title">Super Mario Maker 2</h6>
         <h6 class="card-text">$ 49.990</h6>
@@ -99,7 +105,7 @@
       </div>
     </div>
     <div class="card mb-2" style="width: 20rem">
-      <img src="./assets/img/switch2.jpg" class="card-img-top" alt="..." />
+      <img src="./static/img/switch2.jpg" class="card-img-top" alt="..." />
       <div class="card-body">
         <h6 class="card-title">Super Mario 3D World</h6>
         <h6 class="card-text">$ 49.990</h6>
@@ -107,7 +113,7 @@
       </div>
     </div>
     <div class="card mb-2" style="width: 20rem">
-      <img src="./assets/img/switch3 (1).jpg" class="card-img-top" alt="..." />
+      <img src="./static/img/switch3 (1).jpg" class="card-img-top" alt="..." />
       <div class="card-body">
         <h6 class="card-title">Animal Crossing</h6>
         <h6 class="card-text">$ 49.990</h6>
@@ -118,7 +124,7 @@
 
   <div class="productos-nintendo" style="display: flex">
     <div class="card mb-2" style="width: 20rem">
-      <img src="./assets/img/con1.jpg" class="card-img-top" alt="..." />
+      <img src="./static/img/con1.jpg" class="card-img-top" alt="..." />
       <div class="card-body">
         <h6 class="card-title">Nintendo Switch Controller Purple & Orange</h6>
         <h6 class="card-text">$ 49.990</h6>
@@ -126,7 +132,7 @@
       </div>
     </div>
     <div class="card mb-2" style="width: 20rem">
-      <img src="./assets/img/con2.jpg" class="card-img-top" alt="..." />
+      <img src="./static/img/con2.jpg" class="card-img-top" alt="..." />
       <div class="card-body">
         <h6 class="card-title">Nintendo Switch Controller Pink & Green</h6>
         <h6 class="card-text">$ 89.990</h6>
@@ -134,7 +140,7 @@
       </div>
     </div>
     <div class="card mb-2" style="width: 20rem">
-      <img src="./assets/img/con3.jpg" class="card-img-top" alt="..." />
+      <img src="./static/img/con3.jpg" class="card-img-top" alt="..." />
       <div class="card-body">
         <h6 class="card-title">Nintendo Switch Controller Blue & Red</h6>
         <h6 class="card-text">$ 69.990</h6>
