@@ -62,7 +62,9 @@ body {
   cursor: pointer;
   background-color: #1d212b;
 }
-
+footer {
+  opacity: 0%;
+}
 /*Estilos para las cards de productos*/
 .producto .producto-card {
   z-index: 1;

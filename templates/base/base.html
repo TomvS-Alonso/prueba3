@@ -19,14 +19,13 @@
     <!-- css de nosotros -->
     {% block css %}{% endblock css %}
   </head>
-
   <body>
     <main class="container">
       <!--Navbar-->
       <header>{% include 'base/nav.html' %}</header>
       {% block contenido %} {% endblock contenido %}
       <!--Footer-->
-      <footer>{%include 'base/footer.html' %}</footer>
+      {% include 'base/footer.html' %}
     </main>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
