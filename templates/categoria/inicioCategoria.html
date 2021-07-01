@@ -4,57 +4,48 @@
   type="text/css"
   href="{% static 'css/estiloCrud.css' %}"
 />
-{% endblock css %} {% block titulo %} Productos {%endblock titulo %} 
+{% endblock css %} {% block titulo %} Categorias {%endblock titulo %} 
 
 {% block contenido %}
 <section class="row" id="contPagina">
   <article class="col-sm-12">
     <article class="col-sm-12 my-2"></article>
-    <h2 class="text-center">Mantenedor De Productos</h2>
+    <h2 class="text-center">Categorías</h2>
   </article>
   <article class="col-sm-12 my-2"></article>
   <article class="col-sm-12 d-flex flex-row-reverse" id="Agregar">
-    <a href="{% url 'nuevoProducto' %}" class="btn btn-info"
-      >Agregar Producto</a
+    <a href="{% url 'nuevaCategoria' %}" class="btn btn-info"
+      >Agregar Categría</a
     >
   </article>
   <article class="col-sm-12 my-2"></article>
-  <!-- tabla de productos -->
   <article class="col-sm-12 table-responseive">
     <table class="table">
       <thead>
-        <th>Nombre producto</th>
-        <th>Descripcion</th>
-        <th>Precio</th>
-        <th>Fecha ingreso</th>
-        <th>Categoria</th>
-        <th>Estado</th>
-        <th>Stock</th>
-        <th class="d-flex justify-content-center">Acciones</th>
+        <tr>
+          <th>Nombre categoría</th>
+          <th>Descripcion categoria</th>
+          <th class="d-flex justify-content-center">Acciones</th>
+        </tr>
       </thead>
       <tbody>
-        {% for producto in productos %}
+        {%for categoria in categorias%}
         <tr>
-          <td>{{ producto }}</td>
-          <td>{{ producto.descripcion_producto }}</td>
-          <td>{{ producto.precio_producto }}</td>
-          <td>{{ producto.fecha_ingreso }}</td>
-          <td>{{ producto.categoria_producto }}</td>
-          <td>{{ producto.estado_producto }}</td>
-          <td>{{ producto.stock_producto }}</td>
+          <td>{{categoria}}</td>
+          <td>{{categoria.descripcion_categoria}}</td>
           <td class="d-flex justify-content-center">
             <div class="btn-group" role="group" aria-label="acciones">
               <a
                 type="button"
-                href="{% url 'modificarProducto' idProducto=producto.id %}"
+                href="{% url 'modificarCategoria' idCategoria=categoria.id %}"
                 class="btn btn-warning"
               >
                 <i class="bi bi-pencil-square"></i>
               </a>
               <a
                 type="button"
-                href="{% url 'eliminar' idProducto=producto.id %}"
-                onclick="return window.confirm('Desea eliminar el producto {{ producto.nombre_producto }}')"
+                href="{% url 'eliminarCategoria' idCategoria=categoria.id %}"
+                onclick="return window.confirm('Desea eliminar la categoria {{ categoria.nombre_categoria }}')"
                 class="btn btn-warning"
               >
                 <i class="bi bi-trash"></i>
@@ -62,7 +53,7 @@
             </div>
           </td>
         </tr>
-        {% endfor %}
+        {%endfor%}
       </tbody>
     </table>
   </article>

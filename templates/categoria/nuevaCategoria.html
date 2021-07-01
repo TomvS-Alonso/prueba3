@@ -1,10 +1,4 @@
-{% extends 'base/base.html' %} {% block css %} {% load static %}
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="{% static 'css/estiloCrud.css' %}"
-/>
-{% endblock css %} {% block contenido %}
+{% extends 'base/base.html' %} {% block contenido %}
 <section class="row">
   <article
     class="card col-md-8 col-xs-12 col-xl-7 offset-md-2 offset-xl-3 mt-3"
@@ -12,7 +6,7 @@
   >
     <section class="card-body">
       <h4 class="card-title text-center">Nuevo registro</h4>
-      <form method="POST" enctype="multipart/form-data">
+      <form method="POST">
         {%csrf_token%} {%for campo in formulario %}
         <div class="row">
           <div class="form-group col-md-12">
@@ -28,7 +22,7 @@
         {%endfor%}
         <div class="form-group d-flex justify-content-between">
           <input type="submit" class="btn btn-success" value="Guardar" />
-          <a href="{%url 'inicioProductos'%}" class="btn btn-danger">Volver</a>
+          <a href="{%url 'inicioCategoria'%}" class="btn btn-danger">Volver</a>
         </div>
       </form>
     </section>

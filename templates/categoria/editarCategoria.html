@@ -1,6 +1,5 @@
-{% extends 'base/base.html' %} {% block titulo %} Editar Producto
-{{formulario.nombre_producto.value}} {%endblock titulo%} 
-
+{% extends 'base/base.html' %} {% block titulo %} Editar Categoria
+{{formulario.nombre_categoria.value}} {% endblock titulo %}
 {% block contenido %}
 <section class="row">
   <article
@@ -9,25 +8,27 @@
   >
     <section class="card-body">
       <h3 class="card-title text-center">
-        Modificar {{ formulario.nombre_producto.value }}
+        Modificar {{ formulario.nombre_categoria.value }}
       </h3>
-      <form method="POST" enctype="multipart/form-data">
-        {%csrf_token%} {%for campo in formulario %}
+      <form method="POST">
+        {% csrf_token %} {% for campo in formulario %}
         <div class="form-group col-md-12">
           <label for="{{campo.id_for_label}}">{{campo.label}}</label>
           {{campo}} {%if campo.errors %}
           <small id="{{campo.id_form_label}}Ayuda" class="form-text text-muted"
             >{{ campo.erros }}</small
           >
-          {%endif %}
+          {% endif %}
         </div>
         {%endfor%}
         <div class="form-group d-flex justify-content-between">
           <input type="submit" class="btn btn-success" value="Modificar" />
-          <a href="{%url 'inicioProductos'%}" class="btn btn-danger">Volver</a>
+          <a href="{%url 'inicioCategoria'%}" class="btn btn-outline-danger"
+            >Volver</a
+          >
         </div>
       </form>
     </section>
   </article>
 </section>
-{%endblock contenido%}
+{% endblock contenido %}

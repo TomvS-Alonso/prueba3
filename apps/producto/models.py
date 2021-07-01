@@ -5,6 +5,8 @@ from apps.categoria.models import Categoria
 
 
 class Producto(models.Model):
+    imagen = models.ImageField('Imagen:', upload_to='productos', blank=False, null=False,
+                               default='https://img1.freepng.es/20171220/xxq/question-mark-png-5a3a530b302187.6463118015137717871972.jpg')
     nombre_producto = models.CharField(
         'Nombre del producto', max_length=50, blank=False, null=False)
     descripcion_producto = models.CharField(
@@ -22,3 +24,6 @@ class Producto(models.Model):
         'Estado del Producto', max_length=50, blank=False, null=False)
     stock_producto = models.SmallIntegerField(
         'Stock del producto', blank=False, null=False)
+
+    def __str__(self):
+        return self.nombre_producto
