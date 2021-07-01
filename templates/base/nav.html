@@ -20,7 +20,9 @@
               Consolas
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              {% for categoria in categorias %}
               <a class="dropdown-item" href="{% url 'playstation' %}">PlayStation</a>
+              {% endfor %}
               <a class="dropdown-item" href="{% url 'Xbox' %}">Xbox</a>
               <a class="dropdown-item" href="{% url 'nintendo' %}">Nintendo</a>
               <div class="dropdown-divider"></div>

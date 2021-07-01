@@ -25,3 +25,7 @@ def vistaPc(request):
 
 def vistaComponentes(request):
     return render(request, 'pc/componentes/componentes.html')
+
+
+def vistaCarro(request):
+    return render(request, 'carro/carro.html')
