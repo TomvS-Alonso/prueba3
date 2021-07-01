@@ -65,6 +65,17 @@ def producto(request):
 
     contexto = {
          'productos': productoEncontrado,
-         'Categorias': categoriaEncontrada
+         'categorias': categoriaEncontrada
     }
     return render(request, 'producto/productos.html', contexto)     
+
+
+def filtro(request, idCategoria):
+    productoEncontrado = Producto.objects.filter(categoria_producto_id = idCategoria) 
+    categoriaEncontrada = Categoria.objects.all()
+
+    contexto = {
+         'productos': productoEncontrado,
+         'categorias': categoriaEncontrada
+    }
+    return render(request, 'producto/productos.html', contexto) 

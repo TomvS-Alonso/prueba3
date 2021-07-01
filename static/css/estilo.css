@@ -33,7 +33,25 @@ body{
     color: white;
  }
 
+.cartaProducto {
+   overflow: hidden;
+   flex-wrap: wrap;
+   min-width: 120px;
+}
 
- 
+.contProductos {
+   background: #343a40;
+   padding: 20px;
+}
 
+.btnFiltro {
+   background: #343a40;
+   margin-bottom: 10px;
+   padding: 1px;
+   display: flex;
+   justify-content: space-around;
+}
 
+a {
+   padding: 5px 10px;
+}

@@ -1,19 +1,33 @@
 {% extends 'base/base.html' %}
 
+{% include 'base/css.html' %}
+
 {% block contenido %}
-{% for producto in productos %}
-<section class="productos">
-    <article>
-        <div class="card mb-2" style="width: 20rem">
+
+<section>
+    <article class="btnFiltro">
+        {% for categoria in categorias %}
+            <a href="{% url 'filtro' categoria.id %}">{{ categoria.nombre_categoria }}</a>
+        {% endfor %}
+    </article>
+    <article class="contProductos d-flex flex-wrap">
+        {% if productos %}
+
+        {% for producto in productos %}
+        <div class="card mb-2 mr-2" style="width: 20rem">
             <img src="{{ producto.imagen.url }}" alt="">
             <div class="card-body">
-                <h6 class="card-title">{{ producto.descripcion_producto }}</h6>
+                <h6 class="card-title">{{ producto.nombre_producto }}</h6>
                 <h6 class="card-text">{{ producto.precio_producto }}</h6>
                 <a class="btn btn-primary">Comprar</a>
             </div>
         </div>
+        {% endfor %}
+        {% else %}
+        <h3>No hay mano compañero</h3>
+        {%endif %}
     </article>
 </section>
 
-{% endfor %}
+
 {% endblock contenido %}
