@@ -3,6 +3,7 @@ from apps.categoria.models import Categoria
 
 # Create your models here.
 class Producto(models.Model):
+    imagen = models.ImageField('Imagen:', upload_to='productos', blank=False, null=False, default='https://img1.freepng.es/20171220/xxq/question-mark-png-5a3a530b302187.6463118015137717871972.jpg')
     nombre_producto = models.CharField('Nombre del producto', max_length= 50, blank= False, null= False)
     descripcion_producto = models.CharField('descripcion del producto', max_length= 150, blank= False, null= False)
     precio_producto = models.IntegerField('Precio del producto', blank=False, null= False)

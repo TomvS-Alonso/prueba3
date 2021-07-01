@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.core.exceptions import ObjectDoesNotExist
 from .models import Producto
+from apps.categoria.models import Categoria
 from .forms import FormularioProducto
 # Create your views here.
 
@@ -17,7 +18,7 @@ def agregarProducto(request):
     if request.method == 'GET':
         formulario = FormularioProducto()
     elif request.method == 'POST':
-        formulario = FormularioProducto(request.POST)
+        formulario = FormularioProducto(request.POST, request.FILES)
         formulario.save()
         return redirect('inicioProductos')
     contexto = {
@@ -38,7 +39,7 @@ def editarProducto(request, idProducto):
     if request.method == 'GET':
         formulario = FormularioProducto(instance = producto)
     if request.method == 'POST':
-        formulario = FormularioProducto(data = request.POST, instance = producto)
+        formulario = FormularioProducto(request.POST, request.FILES, instance = producto)
         if formulario.is_valid():
             formulario.save()
             return redirect('inicioProductos')
@@ -57,3 +58,13 @@ def eliminarProducto(request, idProducto):
     except ObjectDoesNotExist:
         pass
     return redirect('inicioProductos') 
+
+def producto(request):
+    productoEncontrado = Producto.objects.all() 
+    categoriaEncontrada = Categoria.objects.all()
+
+    contexto = {
+         'productos': productoEncontrado,
+         'Categorias': categoriaEncontrada
+    }
+    return render(request, 'producto/productos.html', contexto)     

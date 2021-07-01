@@ -1,0 +1,19 @@
+{% extends 'base/base.html' %}
+
+{% block contenido %}
+{% for producto in productos %}
+<section class="productos">
+    <article>
+        <div class="card mb-2" style="width: 20rem">
+            <img src="{{ producto.imagen.url }}" alt="">
+            <div class="card-body">
+                <h6 class="card-title">{{ producto.descripcion_producto }}</h6>
+                <h6 class="card-text">{{ producto.precio_producto }}</h6>
+                <a class="btn btn-primary">Comprar</a>
+            </div>
+        </div>
+    </article>
+</section>
+
+{% endfor %}
+{% endblock contenido %}
