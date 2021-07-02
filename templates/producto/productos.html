@@ -1,0 +1,31 @@
+{% extends 'base/base.html' %} {% block css %} {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}" />
+{% endblock css %}{% block contenido %}
+
+<section>
+  <article class="btnFiltro d-flex flex-wrap">
+    {% for categoria in categorias %}
+    <button type="button" class="btn btn-outline-light">
+      <a class="mb-1" href="{% url 'filtro' categoria.id %}">{{ categoria.nombre_categoria }}</a>
+    </button>
+    
+    {% endfor %}
+  </article>
+  <article class="contProductos d-flex flex-wrap">
+    {% if productos %} {% for producto in productos %}
+    <div class="card mb-2 mr-2" style="width: 20rem">
+      <img src="{{ producto.imagen.url }}" alt="" />
+      <div class="card-body">
+        <h6 class="card-title">{{ producto.nombre_producto }}</h6>
+        <h6 class="card-description">{{ producto.descripcion_producto }}</h6>
+        <h6 class="card-text">${{ producto.precio_producto }}</h6>
+        <a class="btn btn-primary">Comprar</a>
+      </div>
+    </div>
+    {% endfor %} {% else %}
+    <h3>No hay mano compañero</h3>
+    {%endif %}
+  </article>
+</section>
+
+{% endblock contenido %}

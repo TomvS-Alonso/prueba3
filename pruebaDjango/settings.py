@@ -39,10 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # apps propias
-    'apps.ps4',
-    'apps.xbox',
     'apps.categoria',
     'apps.principal',
+    'apps.personas',
+    'apps.producto',
+    'apps.carro',
 ]
 
 MIDDLEWARE = [
@@ -86,7 +87,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'prueba3',
         'USER': 'root',
-        'PASSWORD': 'tomas',
+        'PASSWORD': '1234',
         'HOST': 'localhost',
         'PORT': '3306'
     }
@@ -139,3 +140,9 @@ STATIC_ROOT = 'staticfiles'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+MEDIA_URL = '/media/'
+# Ruta fisica del servidor, donde se guardaran las imaganes
+MEDIA_ROOT = join(BASE_DIR, 'media')
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL = '/iniciar-sesion/'
