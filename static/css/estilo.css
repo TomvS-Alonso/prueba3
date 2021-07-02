@@ -52,6 +52,6 @@ body{
    justify-content: space-around;
 }
 
-a {
+.btnFiltro a {
    padding: 5px 10px;
 }
