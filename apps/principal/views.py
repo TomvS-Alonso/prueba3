@@ -34,7 +34,7 @@ def vistaSearch(request):
     if request.method == "POST":
         searched = request.POST.get('searched')
         searched = searched
-        product = Producto.objects.filter(nombre_producto__contains=searched)
+        product = Producto.objects.filter(nombre_producto__icontains=searched)
         return render(request, 'buscar/search.html',
         {'searched': searched,
         'product':product})

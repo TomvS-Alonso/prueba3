@@ -20,6 +20,8 @@
 .container > h1{
 
 	padding: 20px 0;
+    color: white;
+    text-align: center;
 
 }
 
@@ -45,9 +47,13 @@
 
 	overflow: hidden;
 
-	border: 1px solid silver;
+	border: 1px solid black;
 
 	margin-bottom: 20px;
+
+  background: #343a40;
+
+  color: white
 
 }
 
