@@ -28,6 +28,11 @@
     <main class="container">
       <!--Navbar-->
       <header>{% include 'base/nav.html' %}</header>
+
+      <section class="row alerta">
+				{% include 'base/mensajes.html' %}
+			</section>
+
       {% block contenido %} {% endblock contenido %}
       <!--Footer-->
       {% include 'base/footer.html' %}

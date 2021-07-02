@@ -10,6 +10,7 @@ class Perfil(models.Model):
     rut = models.CharField('Ingrese su RUT ', max_length=12,
                            null=False, blank=False, unique=True)
     fecha_creacion = models.DateField(auto_now=True)
+    admin = models.BooleanField(default=False)
 
     def __str__(self):
         return self.usuario.username

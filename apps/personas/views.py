@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import RegistroUsuario, IniciarSesion
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 # Create your views here.
 
 
@@ -14,6 +15,9 @@ def registro(request):
             usuario.refresh_from_db()
             usuario.perfil.rut = formulario.cleaned_data.get('rut')
             usuario.save()
+            messages.success(request, 'Usuario {} registrado con éxito'.format(
+                username
+            ))
             return redirect('principal')
     if request.method == 'GET':
         formulario = RegistroUsuario()
@@ -32,8 +36,12 @@ def iniciarSesion(request):
         contrasena = request.POST.get('password')
         usuario = authenticate(username=usuario, password=contrasena)
         if usuario is not None:
+            messages.info(request, 'Bienvenido {}'.format(usuario))
             login(request, usuario)
             return redirect('principal')
+
+        else:
+            messages.info(request, 'Usuario o contraseña no son correctos')
     contexto = {
         'formulario': formulario
     }
@@ -42,5 +50,6 @@ def iniciarSesion(request):
 
 def salir(request):
     if request.user.is_authenticated:
+        messages.info(request,'Adios :c, vuelva pronto')
         logout(request)
     return redirect('principal')

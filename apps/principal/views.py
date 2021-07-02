@@ -30,6 +30,9 @@ def vistaComponentes(request):
 def vistaCarro(request):
     return render(request, 'carrito/carro.html')
 
+def contacto(request):
+    return render(request, 'base/contacto.html')
+
 def vistaSearch(request):
     if request.method == "POST":
         searched = request.POST.get('searched')

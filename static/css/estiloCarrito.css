@@ -155,11 +155,13 @@
 
 	padding: 20px;
 
-	height: 240px;
+	height: 200px;
 
 	border: 1px solid silver;
 
 	border-radius: 5px;
+  
+  background: white;
 
 }
 

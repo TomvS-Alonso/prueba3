@@ -1,4 +1,6 @@
-{% block css %} 
+
+
+{% block css %}
 {% load static %}
 <link
   rel="stylesheet"
@@ -37,6 +39,7 @@
           </li>
           <!-- Segundo Dropdown -->
           <li class="nav-item dropdown">
+            {% if user.is_superuser %} <!--Profe debe de modificar su usuario (is_superuser = 1) para poder ver la seccion de mantenedores o simplemente borrar el if xD-->
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               Mantencion
@@ -46,32 +49,42 @@
               <a class="dropdown-item" href="{%url 'inicioCategoria'%}">Categorias</a>
             </div>
           </li>
+          {% endif %}
           <!--Dropdown Login-->
           <div class="dropdown ml-1 mt-1" id="dropdownlogin">
             <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenu2"
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Iniciar sesión
+              Cuenta
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-              <a class="dropdown-item" href="{% url 'iniciar_sesion' %}">Inicio de Sesion</a>
+              {% if user.is_authenticated %}
               <a class="dropdown-item" href="{% url 'salir' %}">Salir</a>
+              {% else %}
+              <a class="dropdown-item" href="{% url 'iniciar_sesion' %}">Inicio de Sesion</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="{% url 'Registro' %}">¿No tienes una cuenta?</a>
               <a class="dropdown-item" href="#">¿Olvidaste tu contraseña?</a>
+              {% endif %}
+
             </div>
           </div>
-
           <li class="nav-item active">
+            {% if user.is_authenticated %}
             <a class="nav-link" type="button" href="{% url 'Carrito' %}">
               Carrito <i class="bi bi-cart4"></i>
             </a>
+            {% else %}
+            <a class="nav-link" type="button" href="{% url 'iniciar_sesion' %}">
+              Carrito <i class="bi bi-cart4"></i>
+            </a>
+            {% endif %}
           </li>
 
 
         </ul>
         <form method="POST" action="{% url 'search' %}" >
           {%csrf_token%}
-          <input type="text" name="searched" placeholder="Buscar productos (en mayúscula)" size=50/>
+          <input type="text" name="searched" placeholder="Buscar productos" size=50/>
           <button class="btn btn-outline-secondary mr-2" type="submit">Buscar</button>
         </form>
 </nav>
