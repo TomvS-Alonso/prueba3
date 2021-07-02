@@ -27,5 +27,8 @@ class Producto(models.Model):
 
     def __str__(self):
         return self.nombre_producto
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 0881992825f0e7e4a3277a4908d74b960c85ca89

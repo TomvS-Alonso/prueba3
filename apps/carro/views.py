@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.shortcuts import render, redirect
 from apps.personas.models import Perfil
 from apps.carro.models import Carrito
@@ -33,3 +34,8 @@ def eliminarCarrito(request, idProducto):
     productoCarrito.delete()
     return redirect('Carrito')
     
+=======
+from django.shortcuts import render
+
+# Create your views here.
+>>>>>>> 0881992825f0e7e4a3277a4908d74b960c85ca89

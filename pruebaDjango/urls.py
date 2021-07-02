@@ -24,7 +24,10 @@ urlpatterns = [
     path('producto/', include('apps.producto.urls')),
     path('categoria/', include('apps.categoria.urls')),
     path('cuentas/', include('apps.personas.urls')),
+<<<<<<< HEAD
     path('carro/', include('apps.carro.urls')),
+=======
+>>>>>>> 0881992825f0e7e4a3277a4908d74b960c85ca89
 
 ] + static(
     settings.MEDIA_URL,

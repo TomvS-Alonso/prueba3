@@ -28,6 +28,7 @@ def vistaComponentes(request):
 
 
 def vistaCarro(request):
+<<<<<<< HEAD
     return render(request, 'carrito/carro.html')
 
 def contacto(request):
@@ -43,3 +44,6 @@ def vistaSearch(request):
         'product':product})
     else:
         return render(request, 'buscar/search.html')
+=======
+    return render(request, 'carro/carro.html')
+>>>>>>> 0881992825f0e7e4a3277a4908d74b960c85ca89

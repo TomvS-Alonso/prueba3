@@ -10,7 +10,10 @@ class Perfil(models.Model):
     rut = models.CharField('Ingrese su RUT ', max_length=12,
                            null=False, blank=False, unique=True)
     fecha_creacion = models.DateField(auto_now=True)
+<<<<<<< HEAD
     admin = models.BooleanField(default=False)
+=======
+>>>>>>> 0881992825f0e7e4a3277a4908d74b960c85ca89
 
     def __str__(self):
         return self.usuario.username
