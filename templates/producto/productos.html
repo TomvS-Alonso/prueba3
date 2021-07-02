@@ -3,21 +3,23 @@
 {% endblock css %}{% block contenido %}
 
 <section>
-  <article class="btnFiltro">
+  <article class="btnFiltro d-flex flex-wrap">
     {% for categoria in categorias %}
-    <a href="{% url 'filtro' categoria.id %}"
-      >{{ categoria.nombre_categoria }}</a
-    >
+    <button type="button" class="btn btn-outline-light">
+      <a class="mb-1" href="{% url 'filtro' categoria.id %}">{{ categoria.nombre_categoria }}</a>
+    </button>
+
     {% endfor %}
   </article>
   <article class="contProductos d-flex flex-wrap">
     {% if productos %} {% for producto in productos %}
     <div class="card mb-2 mr-2" style="width: 20rem">
-      <img src="{{ producto.imagen.url }}" alt="" />
+      <img class="imagenPr" src="{{ producto.imagen.url }}" alt="" />
       <div class="card-body">
         <h6 class="card-title">{{ producto.nombre_producto }}</h6>
-        <h6 class="card-text">{{ producto.precio_producto }}</h6>
-        <a class="btn btn-primary">Comprar</a>
+        <h6 class="card-description">{{ producto.descripcion_producto }}</h6>
+        <h6 class="card-text">${{ producto.precio_producto }}</h6>
+        <a class="btn btn-primary" href="{% url 'agregarCarro' producto.id %}">Comprar</a>
       </div>
     </div>
     {% endfor %} {% else %}

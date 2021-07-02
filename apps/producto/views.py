@@ -90,13 +90,4 @@ def filtro(request, idCategoria):
     return render(request, 'producto/productos.html', contexto)
 
 
-def agregarCarrito(request, idProducto):
-    productoCarrito = Carrito.objects.create(
-        usuario=Perfil.objects.get(usuario=request.user.id),
-        producto=Producto.objects.get(id=idProducto))
-    return redirect('producto')
 
-
-def eliminarCarrito(request, idProducto):
-    productoCarrito = Carrito.objects.delete(
-        producto=Producto.objects.get(id=idProducto))

@@ -24,6 +24,7 @@ urlpatterns = [
     path('producto/', include('apps.producto.urls')),
     path('categoria/', include('apps.categoria.urls')),
     path('cuentas/', include('apps.personas.urls')),
+    path('carro/', include('apps.carro.urls')),
 
 ] + static(
     settings.MEDIA_URL,

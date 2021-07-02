@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from apps.producto.models import Producto
 # Create your views here.
 
 
@@ -28,4 +28,15 @@ def vistaComponentes(request):
 
 
 def vistaCarro(request):
-    return render(request, 'carro/carro.html')
+    return render(request, 'carrito/carro.html')
+
+def vistaSearch(request):
+    if request.method == "POST":
+        searched = request.POST.get('searched')
+        searched = searched
+        product = Producto.objects.filter(nombre_producto__contains=searched)
+        return render(request, 'buscar/search.html',
+        {'searched': searched,
+        'product':product})
+    else:
+        return render(request, 'buscar/search.html')

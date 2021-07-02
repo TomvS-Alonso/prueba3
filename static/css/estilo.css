@@ -42,16 +42,29 @@ body {
 .contProductos {
   background: #343a40;
   padding: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding-left: 6%;
 }
 
 .btnFiltro {
   background: #343a40;
   margin-bottom: 10px;
-  padding: 1px;
+  padding: 5px;
   display: flex;
   justify-content: space-around;
+  border: 2px solid black;
+  border-radius: 5px;
 }
 
-a {
-  padding: 5px 10px;
+.btnFiltro a {
+  color: white;
+}
+
+.btnFiltro a:hover {
+  color: black;
+}
+
+.imagenPr{
+  height: 315px;
 }
