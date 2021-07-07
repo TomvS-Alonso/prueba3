@@ -18,7 +18,6 @@
         <h3 class="product-name">{{ producto.producto.nombre_producto }}</h3>
         <h4 class="product-price">${{ producto.producto.precio_producto }}</h4>
         <p class="product-remove">
-          <i class="fa fa-trash" aria-hidden="true"></i>
           <a class="btn" href="{% url 'eliminarCarro' producto.id %}">Eliminar</a>
         </p>
       </div>
